@@ -1,5 +1,5 @@
 tr.puwc-setting td.forminp {
-    display: flex;
+    display: flex !important;
     flex-wrap: wrap;
 }
 

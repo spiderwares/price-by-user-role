@@ -49,7 +49,7 @@ if (! function_exists('puwc_constructor') ) :
             include_once 'includes/public/class.puwc-price-controller.php';
         endif;
     }
-    add_action('puwc_init', 'puwc_constructor');
+    add_action( 'puwc_init', 'puwc_constructor');
 
 endif;
 
