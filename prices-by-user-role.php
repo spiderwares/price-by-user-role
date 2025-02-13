@@ -70,13 +70,12 @@ endif;
 
 if (! function_exists('puwc_install') ) :
 
-    function puwc_install()
-    {
+    function puwc_install() {
         if (! function_exists('WC') ) :
             add_action('admin_notices', 'puwc_woocommerce_admin_notice');
-     else :
-         do_action('puwc_init');
-     endif;
+        else :
+            do_action('puwc_init');
+        endif;
     }
     add_action('plugins_loaded', 'puwc_install', 10);
 
