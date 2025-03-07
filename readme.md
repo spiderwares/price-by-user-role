@@ -1,10 +1,10 @@
 # Price by User Role
 
-**Contributors:** jthemesstudio 
+**Contributors:** jthemesstudio, spiderwares   
 **Tags:** woocommerce, price by user role, role-based pricing, user role, dynamic pricing  
-**Requires at least:** 5.0  
+**Requires at least:** 5.6
 **Tested up to:** 6.7
-**Stable tag:** 1.0.0  
+**Stable tag:** 1.0.3  
 **Requires PHP:** 7.4  
 **License:** GPL-2.0+  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
@@ -17,24 +17,30 @@ The Price by User Role plugin lets store owners set custom pricing discounts or 
 
 Price by User Role provides store owners with the flexibility to apply unique pricing rules depending on user roles, visitors, and product categories. Ideal for **B2B stores**, **wholesalers**, and **retailers**, it helps manage pricing efficiently, enhancing customer engagement and boosting conversions.
 
+## Presentation  
+
+[**Premium**](https://codecanyon.net/item/price-by-user-roles-in-woocommerce-plugin/52908083) | [**Demo**](https://plugins.jthemes.net/price-by-user-roles/)  | [**Documentation**](https://plugins.jthemes.net/docs/price-by-user-role/)
+
 ## Watch a Demo Video
 <iframe width="800" height="375" src="https://www.youtube.com/embed/mVuAuUyPkdQ?si=GPmFZKIX_vrogz1W" frameborder="0" allowfullscreen></iframe>
 
-### Features
+## 🚀 Features  
 
-- **Fixed or Discount-Based Price Adjustments**: Adjust prices by a fixed amount or percentage.
-- **Support for Visitor Users**: Apply custom pricing rules for non-logged-in users.
-- **Role-Specific Pricing**: Set discounts or markups based on user roles.
-- **Hide Prices**: Remove product prices for specific user roles.
-- **Custom Price Message**: Replace price displays with custom text (e.g., "Contact for Pricing").
-- **Discount/Markup Tables**: Display detailed pricing adjustments on shop, single product, and product archive pages.
+⭐ **Fixed or Percentage-Based Pricing Adjustments** – Set price modifications using a fixed amount or percentage-based discounts/markups.  
+⭐ **Support for Guest Users** – Apply custom pricing rules even for non-logged-in visitors.  
+⭐ **Role-Based Pricing** – Assign exclusive discounts or markups to different user roles.  
+⭐ **Hide Prices for Specific User Roles** – Restrict product prices from being displayed based on user roles.  
+⭐ **Custom Price Messages** – Replace price displays with personalized text (e.g., "Contact for Pricing").  
+⭐ **Dynamic Discount/Markup Tables** – Show clear pricing breakdowns on shop, product, and archive pages.  
 
-#### Pro Features
 
-- **Sale/Non-Sale Product Rules**: Apply pricing rules based on whether a product is on sale or not.
-- **Product-Specific Overrides**: Override global pricing rules on individual product pages.
-- **Category-Specific Overrides**: Apply unique pricing rules for specific categories.
-- **Multiple Category Rule Management**: Manage complex pricing strategies with priority-based rules.
+## 🔥 Pro Features  
+
+⭐ **Sale & Non-Sale Product Rules** – Set pricing rules specifically for products that are on sale or at regular price.  
+⭐ **Product-Specific Pricing Overrides** – Customize individual product prices, overriding global rules when needed.  
+⭐ **Category-Based Pricing Rules** – Apply unique price adjustments for specific product categories.  
+⭐ **Advanced Category Rule Management** – Set up multiple category-based pricing rules with priority control for complex strategies.  
+
 
 ### Benefits
 
@@ -67,14 +73,12 @@ Yes, both product-specific and category-specific overrides are possible with the
 
 ## Screenshots
 
-1. **Plugin Settings Page**  
-   ![Plugin Settings](screenshot-settings-page.png)
-   
-2. **Discount Table Display on Shop Page**  
-   ![Discount Table](screenshot-discount-table.png)
-   
-3. **Custom Price Message**  
-   ![Custom Message](screenshot-custom-message.png)
+1. **Display Price On Shop Page:** Shows how the price is displayed on the WooCommerce shop page, considering user roles.
+2. **Display Price On Product Page:** Illustrates the price display on individual product pages based on user roles.
+3. **Display Price On Category Page:** Shows how prices appear on category pages with user role-based pricing.
+4. **Plugin Setting Page:** Displays the settings page for configuring the user role-based price adjustments in the plugin.
+5. **Price Setting Page For Category:** Shows the interface where you can set specific prices for categories, based on user roles.
+6. **Price Setting Page For Single Product:**  Shows the interface for setting individual product prices according to different user roles.
 
 ## Changelog
 
