@@ -1,4 +1,4 @@
-# Price by User Role
+# Price by User Role for WooCommerce
 
 **Contributors:** jthemesstudio, spiderwares   
 **Tags:** woocommerce, price by user role, role-based pricing, user role, dynamic pricing  
