@@ -1,10 +1,10 @@
-# Price by User Role for WooCommerce
+# Price by User Role for Woocommerce
 
 **Contributors:** jthemesstudio, spiderwares   
-**Tags:** woocommerce, price by user role, role-based pricing, user role, dynamic pricing  
+**Tags:** woocommerce, price by user role for woocommerce, role-based pricing, user role, dynamic pricing  
 **Requires at least:** 5.6
-**Tested up to:** 6.7
-**Stable tag:** 1.0.3  
+**Tested up to:** 6.8
+**Stable tag:** 1.0.6  
 **Requires PHP:** 7.4  
 **License:** GPL-2.0+  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
@@ -19,7 +19,7 @@ Price by User Role provides store owners with the flexibility to apply unique pr
 
 ## Presentation  
 
-[**Premium**](https://codecanyon.net/item/price-by-user-roles-in-woocommerce-plugin/52908083) | [**Demo**](https://plugins.jthemes.net/price-by-user-roles/)  | [**Documentation**](https://plugins.jthemes.net/docs/price-by-user-role/)
+[**Premium**](https://codecanyon.net/item/price-by-user-roles-in-woocommerce-plugin/52908083) | [**Demo**](https://plugins.jthemesstudio.com/price-by-user-roles/)  | [**Documentation**](https://plugins.jthemesstudio.com/docs/price-by-user-role/)
 
 ## Watch a Demo Video
 <iframe width="800" height="375" src="https://www.youtube.com/embed/mVuAuUyPkdQ?si=GPmFZKIX_vrogz1W" frameborder="0" allowfullscreen></iframe>
@@ -82,6 +82,12 @@ Yes, both product-specific and category-specific overrides are possible with the
 
 ## Changelog
 
+### 1.0.6
+- Improved compatibility with AJAX
+
+### 1.0.4
+- Stable update with WordPress 6.8
+
 ### 1.0.0
 - Initial release with both free and pro features.
 
@@ -90,6 +96,6 @@ Yes, both product-specific and category-specific overrides are possible with the
 ### 1.0.0
 - Initial release. No previous versions available.
 
-## Support
+## License
 
-For support, visit the [Support Forum](#) or contact us directly. We’re here to help!
+This plugin is licensed under the GNU General Public License v2.0 or later. For more details, visit [GPL-2.0+ License URI](http://www.gnu.org/licenses/gpl-2.0.txt).

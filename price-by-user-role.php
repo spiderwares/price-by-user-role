@@ -1,8 +1,8 @@
 <?php
 /*
- * Plugin Name:       Price by User Role
+ * Plugin Name:       Price by User Role for Woocommerce
  * Description:       Adjust product prices based on user roles. Offer discounts for wholesalers, increase prices for guests, and set exclusive rates for premium members with this easy-to-use plugin.
- * Version:           1.0.3
+ * Version:           1.0.6
  * Requires at least: 5.6
  * Requires PHP:      7.4
  * Author:            jthemesstudio
@@ -25,7 +25,7 @@ if (! defined('PUWC_BASENAME') ) :
 endif;
 
 if (! defined('PUWC_VERSION') ) :
-    define('PUWC_VERSION', '1.0.3');
+    define('PUWC_VERSION', '1.0.6');
 endif;
 
 if (! defined('PUWC_PATH') ) :
@@ -45,9 +45,12 @@ if (! function_exists('puwc_constructor') ) :
             include_once 'includes/admin/class.puwc-global-setting.php';
             include_once 'includes/admin/class.puwc-product-cat-setting.php';
             include_once 'includes/admin/class.puwc-single-product-setting.php';
-        else :
+        endif;
+
+        if (!is_admin() || !isset($GLOBALS['pagenow']) || $GLOBALS['pagenow'] !== 'edit.php' || !isset($_GET['post_type']) || $_GET['post_type'] !== 'product') :
             include_once 'includes/public/class.puwc-price-controller.php';
         endif;
+        
     }
     add_action('puwc_init', 'puwc_constructor');
 
