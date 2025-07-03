@@ -2,7 +2,7 @@
 /*
  * Plugin Name:       Price by User Role for Woocommerce
  * Description:       Adjust product prices based on user roles. Offer discounts for wholesalers, increase prices for guests, and set exclusive rates for premium members with this easy-to-use plugin.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Requires at least: 5.6
  * Requires PHP:      7.4
  * Author:            jthemesstudio
@@ -16,71 +16,29 @@
 
 defined('ABSPATH') || exit;
 
-if (! defined('PUWC_FILE') ) :
-    define('PUWC_FILE', __FILE__);
+if ( ! defined( 'PUWC_FILE' ) ) :
+    define( 'PUWC_FILE', __FILE__ );
 endif;
 
-if (! defined('PUWC_BASENAME') ) :
-    define('PUWC_BASENAME', plugin_basename(PUWC_FILE));
+if ( ! defined( 'PUWC_BASENAME' ) ) :
+    define( 'PUWC_BASENAME', plugin_basename( PUWC_FILE ) );
 endif;
 
-if (! defined('PUWC_VERSION') ) :
-    define('PUWC_VERSION', '1.0.6');
+if ( ! defined( 'PUWC_VERSION' ) ) :
+    define( 'PUWC_VERSION', '1.0.7' );
 endif;
 
-if (! defined('PUWC_PATH') ) :
-    define('PUWC_PATH', plugin_dir_path(__FILE__));
+if ( ! defined( 'PUWC_PATH' ) ) :
+    define( 'PUWC_PATH', plugin_dir_path( __FILE__ ) );
 endif;
 
-if (! defined('PUWC_URL') ) :
-    define('PUWC_URL', plugin_dir_url(__FILE__));
-endif;
-
-
-if (! function_exists('puwc_constructor') ) :
-
-    function puwc_constructor()
-    {
-        if(is_admin() ) :
-            include_once 'includes/admin/class.puwc-global-setting.php';
-            include_once 'includes/admin/class.puwc-product-cat-setting.php';
-            include_once 'includes/admin/class.puwc-single-product-setting.php';
-        endif;
-
-        if (!is_admin() || !isset($GLOBALS['pagenow']) || $GLOBALS['pagenow'] !== 'edit.php' || !isset($_GET['post_type']) || $_GET['post_type'] !== 'product') :
-            include_once 'includes/public/class.puwc-price-controller.php';
-        endif;
-        
-    }
-    add_action('puwc_init', 'puwc_constructor');
-
+if ( ! defined( 'PUWC_URL' ) ) :
+    define( 'PUWC_URL', plugin_dir_url( __FILE__ ) );
 endif;
 
 
-if (! function_exists('puwc_woocommerce_admin_notice') ) :
+// Load main plugin class
+require_once PUWC_PATH . 'includes/class-price-by-user-role.php';
 
-    function puwc_woocommerce_admin_notice()
-    {
-        ?>
-        <div class="error">
-            <p><?php esc_html_e('Prices by User Role for WooCommerce is enabled but not effective. It requires WooCommerce to work.', 'price-by-user-role'); ?></p>
-        </div>
-        <?php
-    }
-
-endif;
-
-
-if (! function_exists('puwc_install') ) :
-
-    function puwc_install()
-    {
-        if (! function_exists('WC') ) :
-            add_action('admin_notices', 'puwc_woocommerce_admin_notice');
-     else :
-         do_action('puwc_init');
-     endif;
-    }
-    add_action('plugins_loaded', 'puwc_install', 10);
-
-endif;
+// Initialize the plugin
+Price_By_User_Role::instance();

@@ -34,7 +34,24 @@ class Puwc_Global_Setting
         $screen_id = $screen ? $screen->id : '';
 
         if (in_array($screen_id, wc_get_screen_ids()) ) :
-            wp_enqueue_style('puwc_admin_styles', PUWC_URL . 'assets/css/admin-styles.css', array(), time());
+
+            wp_enqueue_style(
+                'puwc_admin_styles',
+                PUWC_URL . 'assets/css/admin-styles.css',
+                array(),
+                PUWC_VERSION
+            );
+
+            
+            if( ! class_exists( 'Price_By_User_Role_PRO' ) ):  
+                wp_enqueue_style(
+                    'puwc-upgrade-style',
+                    PUWC_URL . 'assets/css/admin-upgrade.css',
+                    array(),
+                    PUWC_VERSION
+                );
+            endif;
+
         endif;
     }
     
@@ -136,8 +153,17 @@ class Puwc_Global_Setting
         include PUWC_PATH . '/includes/admin/views/puwc-setting-html.php';
     }
 
-    public function sanitize_recursive($data)
-    {
+    /**
+     * Recursively sanitize input data.
+     *
+     * This function walks through an array of input values and sanitizes each value.
+     * If a value is an array, it will recursively sanitize its contents.
+     * Scalars are sanitized using WooCommerce's wc_clean() function.
+     *
+     * @param array $data The data array to be sanitized.
+     * @return array The sanitized data.
+     */
+    public function sanitize_recursive($data){
         $sanitized_data = array();
         foreach ( $data as $key => $value ) :
             if (is_array($value)) :

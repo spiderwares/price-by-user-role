@@ -2,142 +2,172 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Price by User Role 1.0.0\n"
+"Project-Id-Version: Price by User Role for Woocommerce 1.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/price-by-user-role\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-25T17:37:54+01:00\n"
+"POT-Creation-Date: 2025-06-05T06:33:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: price-by-user-role\n"
 
 #. Plugin Name of the plugin
-#: price-by-user-role.php
-#: includes/admin/class.puwc-global-setting.php:15
-#: includes/admin/class.puwc-global-setting.php:61
-#: includes/admin/class.puwc-single-product-setting.php:18
-msgid "Price by User Role"
+#: D:\wamp64\www\price-by-user-role\wp-content\plugins\price-by-user-role\price-by-user-role.php
+msgid "Price by User Role for Woocommerce"
 msgstr ""
 
 #. Description of the plugin
-#: price-by-user-role.php
+#: D:\wamp64\www\price-by-user-role\wp-content\plugins\price-by-user-role\price-by-user-role.php
 msgid "Adjust product prices based on user roles. Offer discounts for wholesalers, increase prices for guests, and set exclusive rates for premium members with this easy-to-use plugin."
 msgstr ""
 
 #. Author of the plugin
-#: price-by-user-role.php
+#: D:\wamp64\www\price-by-user-role\wp-content\plugins\price-by-user-role\price-by-user-role.php
 msgid "jthemesstudio"
 msgstr ""
 
 #. Author URI of the plugin
-#: price-by-user-role.php
+#: D:\wamp64\www\price-by-user-role\wp-content\plugins\price-by-user-role\price-by-user-role.php
 msgid "https://jthemes.com"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:57
-#: includes/admin/class.puwc-product-cat-setting.php:16
+#: includes/admin/class.puwc-global-setting.php:15
+#: includes/admin/class.puwc-global-setting.php:78
+#: includes/admin/class.puwc-single-product-setting.php:18
+msgid "Price by User Role"
+msgstr ""
+
+#: includes/admin/class.puwc-global-setting.php:74
+#: includes/admin/class.puwc-product-cat-setting.php:17
 #: includes/admin/class.puwc-single-product-setting.php:29
 msgid "Visitor (Unregistered Users)"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:63
+#: includes/admin/class.puwc-global-setting.php:80
 msgid "Your price adjustments based on user roles are governed by the settings outlined below. These settings determine how your product prices are modified to accommodate different user roles."
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:68
-#: includes/admin/views/puwc-product-cat-fields-html.php:23
-#: includes/admin/views/puwc-single-product-fields-html.php:12
+#: includes/admin/class.puwc-global-setting.php:85
+#: includes/admin/views/puwc-product-cat-fields-html.php:25
+#: includes/admin/views/puwc-single-product-fields-html.php:14
 msgid "Apply Rules on"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:71
-#: includes/admin/views/puwc-product-cat-fields-html.php:26
+#: includes/admin/class.puwc-global-setting.php:88
+#: includes/admin/views/puwc-product-cat-fields-html.php:28
 msgid "On Both Products"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:72
-#: includes/admin/views/puwc-product-cat-fields-html.php:27
+#: includes/admin/class.puwc-global-setting.php:89
+#: includes/admin/views/puwc-product-cat-fields-html.php:29
 msgid "On Sale Products"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:73
-#: includes/admin/views/puwc-product-cat-fields-html.php:28
+#: includes/admin/class.puwc-global-setting.php:90
+#: includes/admin/views/puwc-product-cat-fields-html.php:30
 msgid "On Regular Products"
 msgstr ""
 
 #. translators: %1$s is the link start tag, %2$s is the link end tag.
-#: includes/admin/class.puwc-global-setting.php:80
+#: includes/admin/class.puwc-global-setting.php:97
 msgid "%1$sBuy Premium%2$s To Activate this feature"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:91
+#: includes/admin/class.puwc-global-setting.php:108
 msgid "The postal code, if any, in which your business is located."
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:96
+#: includes/admin/class.puwc-global-setting.php:113
+#: includes/admin/views/puwc-single-product-fields-html.php:36
 msgid "Enable"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:97
+#: includes/admin/class.puwc-global-setting.php:114
+#: includes/admin/views/puwc-product-cat-fields-html.php:57
+#: includes/admin/views/puwc-single-product-fields-html.php:46
 msgid "Discount or Markup"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:98
+#: includes/admin/class.puwc-global-setting.php:115
+#: includes/admin/views/puwc-product-cat-fields-html.php:67
+#: includes/admin/views/puwc-single-product-fields-html.php:56
 msgid "Fixed or Percentage"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:99
+#: includes/admin/class.puwc-global-setting.php:116
+#: includes/admin/views/puwc-product-cat-fields-html.php:77
+#: includes/admin/views/puwc-single-product-fields-html.php:66
 msgid "Value"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:100
+#: includes/admin/class.puwc-global-setting.php:117
+#: includes/admin/views/puwc-product-cat-fields-html.php:89
+#: includes/admin/views/puwc-single-product-fields-html.php:78
 msgid "Hide Add to Cart"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:101
+#: includes/admin/class.puwc-global-setting.php:118
+#: includes/admin/views/puwc-product-cat-fields-html.php:99
+#: includes/admin/views/puwc-single-product-fields-html.php:88
 msgid "Hide Price"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:102
+#: includes/admin/class.puwc-global-setting.php:119
+#: includes/admin/views/puwc-product-cat-fields-html.php:120
+#: includes/admin/views/puwc-single-product-fields-html.php:109
 msgid "Show Discount/Markup"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:103
+#: includes/admin/class.puwc-global-setting.php:120
+#: includes/admin/views/puwc-product-cat-fields-html.php:109
+#: includes/admin/views/puwc-single-product-fields-html.php:98
 msgid "Text for Hidden Price"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:105
+#: includes/admin/class.puwc-global-setting.php:122
 msgid "N/A"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:119
+#: includes/admin/class.puwc-global-setting.php:136
+#: includes/admin/views/puwc-product-cat-fields-html.php:61
+#: includes/admin/views/puwc-single-product-fields-html.php:50
 msgid "Markup(+)"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:120
+#: includes/admin/class.puwc-global-setting.php:137
+#: includes/admin/views/puwc-product-cat-fields-html.php:62
+#: includes/admin/views/puwc-single-product-fields-html.php:51
 msgid "Discount(-)"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:124
+#: includes/admin/class.puwc-global-setting.php:141
 msgid "Fixed Value(%s)"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:125
+#: includes/admin/class.puwc-global-setting.php:142
+#: includes/admin/views/puwc-product-cat-fields-html.php:72
+#: includes/admin/views/puwc-single-product-fields-html.php:61
 msgid "Percentage(%)"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:131
+#: includes/admin/class.puwc-global-setting.php:148
+#: includes/admin/views/puwc-product-cat-fields-html.php:125
+#: includes/admin/views/puwc-single-product-fields-html.php:114
 msgid "Product Page"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:132
+#: includes/admin/class.puwc-global-setting.php:149
+#: includes/admin/views/puwc-product-cat-fields-html.php:126
+#: includes/admin/views/puwc-single-product-fields-html.php:115
 msgid "Shop Page"
 msgstr ""
 
-#: includes/admin/class.puwc-global-setting.php:133
+#: includes/admin/class.puwc-global-setting.php:150
+#: includes/admin/views/puwc-product-cat-fields-html.php:127
+#: includes/admin/views/puwc-single-product-fields-html.php:116
 msgid "Product Category"
 msgstr ""
 
@@ -145,54 +175,83 @@ msgstr ""
 msgid "Price by User Role "
 msgstr ""
 
-#: includes/admin/views/puwc-product-cat-fields-html.php:15
+#: includes/admin/views/puwc-product-cat-fields-html.php:9
+msgid "Buy Premium Now to access below Features"
+msgstr ""
+
+#: includes/admin/views/puwc-product-cat-fields-html.php:17
 msgid "Priority"
 msgstr ""
 
-#: includes/admin/views/puwc-product-cat-fields-html.php:18
+#: includes/admin/views/puwc-product-cat-fields-html.php:20
 msgid "Please enter the priority for the Price by User Role for this category."
 msgstr ""
 
-#: includes/admin/views/puwc-product-cat-fields-html.php:30
+#: includes/admin/views/puwc-product-cat-fields-html.php:32
 msgid "Please choose the option that specifies the price (Regular Price or Sale Price) to which you wish to apply the following rules."
+msgstr ""
+
+#: includes/admin/views/puwc-product-cat-fields-html.php:71
+#: includes/admin/views/puwc-single-product-fields-html.php:60
+msgid "Fixed Value($)"
+msgstr ""
+
+#: includes/admin/views/puwc-product-cat-fields-html.php:116
+msgid "to display product price"
 msgstr ""
 
 #: includes/admin/views/puwc-setting-html.php:96
 msgid "%s to display product price"
 msgstr ""
 
-#: includes/admin/views/puwc-single-product-fields-html.php:15
-msgid "On Both"
-msgstr ""
-
-#: includes/admin/views/puwc-single-product-fields-html.php:16
-msgid "When Product is on Sale"
+#: includes/admin/views/puwc-single-product-fields-html.php:7
+msgid "Buy Premium Now"
 msgstr ""
 
 #: includes/admin/views/puwc-single-product-fields-html.php:17
-msgid "When Product is not on Sale"
+msgid "On Both"
+msgstr ""
+
+#: includes/admin/views/puwc-single-product-fields-html.php:18
+msgid "When Product is on Sale"
 msgstr ""
 
 #: includes/admin/views/puwc-single-product-fields-html.php:19
+msgid "When Product is not on Sale"
+msgstr ""
+
+#: includes/admin/views/puwc-single-product-fields-html.php:21
 msgid "This option will work with variation level as well as"
 msgstr ""
 
-#: includes/public/class.puwc-price-controller.php:341
+#: includes/admin/views/puwc-single-product-fields-html.php:105
+msgid " to display product price"
+msgstr ""
+
+#: includes/class-price-by-user-role.php:67
+msgid "Prices by User Role for WooCommerce is active but requires WooCommerce to function."
+msgstr ""
+
+#: includes/class-puwc-install.php:49
+msgid "Price By User Role Settings"
+msgstr ""
+
+#: includes/class-puwc-install.php:50
+msgid "Settings"
+msgstr ""
+
+#: includes/public/class.puwc-price-controller.php:324
 msgid "Markup: "
 msgstr ""
 
-#: includes/public/class.puwc-price-controller.php:341
+#: includes/public/class.puwc-price-controller.php:324
 msgid "SAVE: "
 msgstr ""
 
-#: includes/public/class.puwc-price-controller.php:351
+#: includes/public/class.puwc-price-controller.php:334
 msgid "Regular Price: "
 msgstr ""
 
-#: includes/public/class.puwc-price-controller.php:352
+#: includes/public/class.puwc-price-controller.php:335
 msgid "Your Price:"
-msgstr ""
-
-#: price-by-user-role.php:63
-msgid "Prices by User Role for WooCommerce is enabled but not effective. It requires WooCommerce to work."
 msgstr ""

@@ -1,2 +1,0 @@
-<?php 
-// Rise and Shine

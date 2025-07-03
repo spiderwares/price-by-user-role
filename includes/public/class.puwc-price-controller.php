@@ -3,23 +3,21 @@
  * Price Controller for WooCommerce.
  */
 
-if (!defined('ABSPATH')) {
+if ( !defined( 'ABSPATH' ) ) :
     exit;
-}
+endif;
 
 /**
  * Class Puwc_Price_Controller
  */
-class Puwc_Price_Controller
-{
+class Puwc_Price_Controller {
     public $option;
     public $userRole;
 
     /**
      * Puwc_Price_Controller constructor.
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->get_current_user_role();
         $this->event_handler();
     }
@@ -29,8 +27,7 @@ class Puwc_Price_Controller
      *
      * @return void
      */
-    public function event_handler()
-    {
+    public function event_handler() {
         // Hide Product Price 
         add_filter('woocommerce_get_price_html', array($this, 'hide_product_price'), 99, 2);
         add_filter('woocommerce_get_price_html', array($this, 'display_markup_discount_rules'), 99, 2);
@@ -56,8 +53,7 @@ class Puwc_Price_Controller
      *
      * @return void
      */
-    public function get_current_user_role()
-    {
+    public function get_current_user_role() {
         $user = wp_get_current_user();
         $this->userRole = isset($user->roles) && !empty($user->roles) ? $user->roles[0] : 'guest';
     }
@@ -68,13 +64,15 @@ class Puwc_Price_Controller
      * @param  int $productID The product ID.
      * @return bool True if enabled, false otherwise.
      */
-    public function is_enabled($productID)
-    {
-        if (empty($productID)) {
+    public function is_enabled($productID) {
+        if ( empty( $productID ) ) :
             return false;
-        }
-        $this->option = get_option('puwc_setting', array());
-        return apply_filters('puwc_matched_options', $this->option, $productID);
+        endif;
+
+        $option          = get_option('puwc_setting', array());
+        $filtered_option = apply_filters('puwc_matched_options', $option, $productID);
+        $this->option    = $filtered_option;
+        return $filtered_option; 
     }
 
     /**
@@ -84,13 +82,12 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The calculated price.
      */
-    public function calculate_product_price($price, $product)
-    {
+    public function calculate_product_price($price, $product) {
         $productID = $product->get_parent_id() ? $product->get_parent_id() : $product->get_id();
         $isEnabled = $this->is_enabled($product->get_id());
-        if (!$isEnabled || empty($price) ) {
+        if (!$isEnabled || empty($price) ) :
             return $price;
-        }
+        endif;
 
         $incdec       = apply_filters('puwc_increment_or_decrement', isset($this->option[$this->userRole]['incdec']) ? $this->option[$this->userRole]['incdec'] : false);
         $fixedPercent = apply_filters('puwc_fixed_or_percent', isset($this->option[$this->userRole]['fixedPercent']) ? $this->option[$this->userRole]['fixedPercent'] : false);
@@ -113,8 +110,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified price.
      */
-    public function get_product_price($price, $product)
-    {
+    public function get_product_price($price, $product) {
         return apply_filters(
             'puwc_product_get_price',
             $this->calculate_product_price($price, $product),
@@ -129,8 +125,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified regular price.
      */
-    public function get_product_regular_price($price, $product)
-    {
+    public function get_product_regular_price($price, $product) {
         return apply_filters(
             'puwc_product_get_regular_price',
             $this->calculate_product_price($price, $product),
@@ -145,8 +140,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified sale price.
      */
-    public function get_product_sale_price($price, $product)
-    {
+    public function get_product_sale_price($price, $product) {
         return apply_filters(
             'puwc_product_get_sale_price',
             $this->calculate_product_price($price, $product),
@@ -161,8 +155,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified variation price.
      */
-    public function get_variation_product_price($price, $product)
-    {
+    public function get_variation_product_price($price, $product) {
         return apply_filters(
             'puwc_variation_product_get_price',
             $this->calculate_product_price($price, $product),
@@ -177,8 +170,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified regular variation price.
      */
-    public function get_variation_product_regular_price($price, $product)
-    {
+    public function get_variation_product_regular_price($price, $product) {
         return apply_filters(
             'puwc_variation_product_get_regular_price',
             $this->calculate_product_price($price, $product),
@@ -193,8 +185,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified variation price.
      */
-    public function get_variation_product_prices_price($price, $product)
-    {
+    public function get_variation_product_prices_price($price, $product) {
         return apply_filters(
             'puwc_variation_product_get_prices_price',
             $this->calculate_product_price($price, $product),
@@ -209,8 +200,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified sale price.
      */
-    public function get_variation_product_prices_sale_price($price, $product)
-    {
+    public function get_variation_product_prices_sale_price($price, $product) {
         return apply_filters(
             'puwc_variation_product_get_prices_sale_price',
             $this->calculate_product_price($price, $product),
@@ -225,8 +215,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified regular price.
      */
-    public function get_variation_product_prices_regular_price($price, $product)
-    {
+    public function get_variation_product_prices_regular_price($price, $product) {
         return apply_filters(
             'puwc_variation_product_get_prices_regular_price',
             $this->calculate_product_price($price, $product),
@@ -241,8 +230,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return float The modified sale price.
      */
-    public function get_variation_product_sale_price($price, $product)
-    {
+    public function get_variation_product_sale_price($price, $product) {
         if (!empty($price)) :
             return apply_filters(
                 'puwc_variation_product_get_prices_regular_price',
@@ -260,8 +248,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product        The product object.
      * @return bool If the add to cart button should be hidden.
      */
-    public function hide_add_to_cart_button($is_purchasable, $product)
-    {
+    public function hide_add_to_cart_button($is_purchasable, $product) {
         $hide_add_to_cart = apply_filters('puwc_hide_add_to_cart_button', isset($this->option[$this->userRole]['hideAddToCart']) ? $this->option[$this->userRole]['hideAddToCart'] : false);
         if ($hide_add_to_cart) :
             remove_action('woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
@@ -277,8 +264,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return string The modified price HTML.
      */
-    public function hide_product_price($price, $product)
-    {
+    public function hide_product_price($price, $product) {
         $hide_price = apply_filters('puwc_hide_price', isset($this->option[$this->userRole]['hidePrice']) ? $this->option[$this->userRole]['hidePrice'] : false, $price, $product);
         $hidePriceText = isset($this->option[$this->userRole]['hidePriceText']) ? $this->option[$this->userRole]['hidePriceText'] : false;
 
@@ -297,8 +283,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product   The product object.
      * @return string The modified sale flash HTML.
      */
-    public function hide_sale_flash($saleFlash, $post, $product)
-    {
+    public function hide_sale_flash($saleFlash, $post, $product) {
         $hide_price = apply_filters('puwc_hide_sale_flash_on_hide_price', isset($this->option[$this->userRole]['hidePrice']) ? $this->option[$this->userRole]['hidePrice'] : false, $product);
         if ($hide_price) :
             return '';
@@ -312,8 +297,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return bool If the discount markup should be shown.
      */
-    public function is_show_discount($product)
-    {
+    public function is_show_discount($product) {
         $display_rules = apply_filters('puwc_show_discount_markup_with_price', isset($this->option[$this->userRole]['showDiscount']) ? $this->option[$this->userRole]['showDiscount'] : false, $product);
 
         if ((in_array('single', (array)$display_rules) && is_product()) 
@@ -332,8 +316,7 @@ class Puwc_Price_Controller
      * @param  WC_Product $product The product object.
      * @return string The modified price HTML.
      */
-    public function display_markup_discount_rules($price, $product)
-    {
+    public function display_markup_discount_rules($price, $product) {
         if ($this->is_show_discount($product) && ($product->is_type('simple') || $product->is_type('variation'))) :
             $price              = get_post_meta($product->get_id(), '_price', true);
             $saveAmount         = (float)$product->get_price() - (float)$price;

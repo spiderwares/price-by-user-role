@@ -27,6 +27,9 @@ class Puwc_Single_Product_Setting extends Puwc_Global_Setting
     public function single_product_fields($product){
         global $wp_roles;
         $wp_roles->role_names['guest'] = esc_html__('Visitor (Unregistered Users)', 'price-by-user-role');
+        // $option_value = [];
+        $option_value = get_post_meta( $product->ID, 'puwc_setting', true );
+        
         include_once PUWC_PATH . '/includes/admin/views/puwc-single-product-fields-html.php';
     }
 }
