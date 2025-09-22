@@ -9,15 +9,13 @@ class Puwc_Global_Setting
     public $id;
     public $label;
    
-    public function __construct()
-    {
+    public function __construct() {
         $this->id    = 'puwc';
         $this->label = esc_html__('Price by User Role', 'price-by-user-role');
         $this->event_handler();
     }
 
-    public function event_handler()
-    {
+    public function event_handler() {
         add_filter('woocommerce_settings_tabs_array', array( $this, 'add_settings_tab' ), 25, 1);
 
         add_action('woocommerce_settings_' . $this->id, array( $this, 'settings_tab' ));
@@ -27,8 +25,7 @@ class Puwc_Global_Setting
 
     }
 
-    function enqueue_style()
-    {
+    function enqueue_style() {
         global $pagenow;
         $screen    = get_current_screen();
         $screen_id = $screen ? $screen->id : '';
@@ -55,20 +52,17 @@ class Puwc_Global_Setting
         endif;
     }
     
-    public function add_settings_tab( $settings_tabs )
-    {
+    public function add_settings_tab( $settings_tabs ) {
         $settings_tabs[$this->id] = $this->label;
         return $settings_tabs;
     }
 
     // Render settings tab
-    public function settings_tab()
-    {
+    public function settings_tab() {
         woocommerce_admin_fields($this->get_settings());
     }
 
-    public function get_settings()
-    {
+    public function get_settings() {
         global $wp_roles;
         // Append guest user role
         $wp_roles->role_names['guest'] = esc_html__('Visitor (Unregistered Users)', 'price-by-user-role');
@@ -101,6 +95,7 @@ class Puwc_Global_Setting
             'id'        => 'puwc_setting[apply_rules_on]',
         );
 
+
         if (!empty($wp_roles)) :
             foreach ( $wp_roles->role_names as $userrole => $rolelbl ) :
                 $settings[] = array(
@@ -122,13 +117,32 @@ class Puwc_Global_Setting
                     'placeholder'           => esc_html__('N/A', 'price-by-user-role')
                 );
             endforeach;
-            $settings[] = array( 'type' => 'sectionend', 'id' => 'puwc_setting' );
         endif;
+        
+        if ( ! class_exists( 'Price_By_User_Role_PRO' ) ) :
+            // Add Custom User Role (PRO)
+            $settings[] = array(
+                'title'     => esc_html__('Add Custom User Role', 'price-by-user-role'),
+                'type'      => 'text',
+                'id'        => 'puwc_setting[custom_user_role]',
+                'placeholder'=> esc_html__('e.g. wholesale_customer', 'price-by-user-role'),
+                'custom_attributes' => array(
+                    'disabled' => true,
+                ),
+                'desc'   => sprintf(
+                    /* translators: %1$s is the link start tag, %2$s is the link end tag. */
+                    esc_html__('%1$sBuy Premium%2$s to add custom user roles', 'price-by-user-role'),
+                    '<a target="_blank" href="https://codecanyon.net/item/price-by-user-roles-in-woocommerce-plugin/52908083?srsltid=AfmBOoqkc-BJAM08OZ0W3mLPlO0vcMVEHmH_SUll9pOmQTTZ7iuUW-Gs">',
+                    '</a>'
+                ),
+            );
+        endif;
+
+        $settings[] = array( 'type' => 'sectionend', 'id' => 'puwc_setting' );
         return apply_filters('puwc_setting_fields_args', $settings);
     }
 
-    public function puwc_admin_fields( $setting )
-    {
+    public function puwc_admin_fields( $setting ) {
         $userrole     = isset($setting['userrole']) ? $setting['userrole'] : '';
         $option_value = get_option('puwc_setting', array());
         

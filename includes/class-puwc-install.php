@@ -49,6 +49,12 @@ if ( ! class_exists( 'PUWC_install' ) ) :
                     esc_attr__( 'Price By User Role Settings', 'price-by-user-role' ),
                     esc_html__( 'Settings', 'price-by-user-role' )
                 ),
+                'upgrade' => sprintf(
+                    '<a href="%s" target="_blank" style="color:#bf3131; font-weight:bold;" aria-label="%s">%s</a>',
+                    esc_url( 'https://codecanyon.net/item/price-by-user-roles-in-woocommerce-plugin/52908083?srsltid=AfmBOoo3mMoceVmf6GVX4quOvFqkxbg1iMut8GxrTfAgbk03KzzVe_MT' ), // 🔗 replace with your actual upgrade URL
+                    esc_attr__( 'Upgrade To Pro', 'price-by-user-role' ),
+                    esc_html__( 'Upgrade To Pro', 'price-by-user-role' )
+                ),
             );
             return array_merge( $action_links, $links );
         }
